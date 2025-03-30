@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {Routes,Route, Navigate} from "react-router-dom"
+import { fetchApi } from './utils/apiConfig';
 
 import HomePage from "./pages/home/HomePage.jsx"
 import SignUpPage from "./pages/auth/signup/SignUpPage.jsx"
@@ -18,7 +19,7 @@ function App() {
     queryKey: ["authUser"],
     queryFn: async()=>{
       try {
-        const res = await fetch("/api/auth/me")
+        const res = await fetchApi("/api/auth/me")
         const data = await res.json()
         if(data.error) return null
         if(!res.ok) throw new Error(data.error || "Something went wrong")
