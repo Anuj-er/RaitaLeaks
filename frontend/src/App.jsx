@@ -19,16 +19,36 @@ function App() {
     queryKey: ["authUser"],
     queryFn: async()=>{
       try {
+        console.log("Fetching auth user data...");
+
         const res = await fetchApi("/auth/me")
-        const data = await res.json()
-        if(data.error) return null
-        if(!res.ok) throw new Error(data.error || "Something went wrong")
-      
-        return data
+        console.log("Auth response status:", res.status);
+
+        if (res.status === 401 || res.status === 403) {
+          console.log("User not authenticated");
+          return null; // Return null for unauthorized rather than throwing
+        }
+
+        // Handle other error responses
+        if (!res.ok) {
+          // Try to get error details, but don't break if JSON parsing fails
+          const errorData = await res.json().catch(() => ({}));
+          console.error("Error response:", errorData);
+          throw new Error(errorData.error || "Something went wrong");
+        }
+        
+
+        // Parse successful response
+        const data = await res.json();
+        console.log("Auth user data received:", data);
+        return data;
       } catch (error) {
-        throw new Error(error.message)
+        console.error("Auth query error:", error.message);
+        throw error;
       }
-    }
+    },
+    retry: false, // Don't retry failed auth requests
+    staleTime: 300000, // 5 minutes
   })
   if(isLoading){
     return(
