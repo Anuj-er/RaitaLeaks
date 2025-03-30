@@ -25,6 +25,24 @@ const PORT = process.env.PORT || 5000
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Enhanced request logging middleware
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  console.log("Headers:", JSON.stringify(req.headers));
+  
+  if (req.method !== 'GET') {
+    console.log("Body:", JSON.stringify(req.body));
+  }
+  
+  // Also log the response
+  const originalSend = res.send;
+  res.send = function(data) {
+    console.log(`Response for ${req.method} ${req.url}:`, res.statusCode);
+    return originalSend.apply(res, arguments);
+  };
+  
+  next();
+});
 // Add CORS to allow requests from your Vercel frontend
 app.use(cors({
   origin: [
