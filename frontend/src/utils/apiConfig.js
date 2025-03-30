@@ -5,7 +5,7 @@ const isProduction = import.meta.env.MODE === 'production';
 
 // Use the environment variable in production, otherwise use relative path for local development
 export const API_BASE_URL = isProduction 
-  ? import.meta.env.VITE_API_BASE_URL || 'https://raitaleaks.onrender.com/api'
+  ? import.meta.env.VITE_API_BASE_URL || 'https://raitaleaks.onrender.com'
   : '';
 
 // Helper function for API calls
