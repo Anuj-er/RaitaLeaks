@@ -1,0 +1,135 @@
+@use "../utils" as u;
+.sidebar{
+  // position: fixed;
+  // left: 0;
+  // width: ;
+
+  // background-color: aliceblue;
+  max-width: 15rem;
+  flex: 2 2 0;
+
+  color: white;
+  &__container{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    padding: 10px;
+    width: 15rem;
+    @include u.breackPoint(md){
+      width: 100%;
+    }
+    left: 0;
+    top: 0;
+    height: 100vh;
+    border-right:1px solid gray;
+    &__logo{
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      @include u.breackPoint(md){
+        justify-content: center;
+      }
+      & svg{
+        fill: white;
+        width: 3rem;
+      }
+    }
+    &__list{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 20px;
+      & .link{
+        display: flex;
+        width: 100%;
+        & li{
+          width: 100%;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          padding: 10px 5px;
+          border-radius: 10px;
+          gap: 10px;
+          cursor: pointer;
+          & .icon{
+            width: 30px;
+            height: 30px;
+            & svg{
+              width: 15px;
+            }
+          }
+          &:hover{
+            background-color: u.$secondary;
+          }
+          @include u.breackPoint(md){
+            justify-content: center;
+          }
+        
+        
+            & span{
+              @include u.breackPoint(md){
+                display: none;
+              }
+            }
+          }
+          
+        }
+      
+    }
+    &__user-container{
+      padding: 15px 10px; 
+      border-radius: 10px;
+      &:hover{
+        background-color: u.$secondary;
+      }
+      margin-top: auto;
+      margin-bottom: 15px;
+      gap: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      &__avatar{
+        @include u.breackPoint(md){
+          display: none;
+        }
+        &__profile-image{
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      &__info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    
+        @include u.breackPoint(md){
+          justify-content: center;
+        }
+        
+        
+        & .icon{
+          width: 20px;
+          height: 20px;
+          
+        }
+        &__text{
+          @include u.breackPoint(md){
+            display: none;
+          }
+          text-align: start;
+          & p:first-child{
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          & p:last-child{
+            font-weight: 300;
+            color: slategray;
+          }
+        }
+      }
+    }
+
+  }
+}

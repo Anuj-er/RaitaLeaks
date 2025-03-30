@@ -1,0 +1,31 @@
+@use "../utils" as u;
+
+.home-container{
+  color: white;
+  flex: 4 4 0;
+  border-right:1px solid gray;
+  min-height: 100vh;
+  &__header{
+    display:  flex;
+    border-bottom:1px solid gray;
+    &__title{
+      flex: 1;
+      display:  flex;
+      justify-content: center;
+      padding: 15px;
+      position: relative;
+      cursor: pointer;
+      &:hover{
+        background-color: u.$secondary;
+      }
+      &__active{
+        position: absolute;
+        bottom: 0;
+        width: 5rem;
+        height: 2px;
+        border-radius: 5px;
+        background-color: u.$primary;
+      }
+    }
+  }
+}

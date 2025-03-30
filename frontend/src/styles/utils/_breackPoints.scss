@@ -1,0 +1,13 @@
+// 700px, 900px , 1440px
+
+$breackPoints-up:(
+  "md": 43.75em,
+  "lg": 56.25em,
+  "xlg": 90em,
+);
+
+@mixin breackPoint($size){
+  @media (max-width: map-get($breackPoints-up,$size)) {
+      @content;
+  }
+}

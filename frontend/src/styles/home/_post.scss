@@ -1,0 +1,266 @@
+@use "../utils" as u;
+
+.post{
+  display: flex;
+  gap: 0.5rem;
+  align-items: start;
+  padding: 1rem;
+  border-bottom: 1px solid gray;
+
+  &__avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    & img{
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    &__userInfo{
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      &__fullName{
+        font-weight: bold;
+      }
+      &__userName{
+        color: gray;
+        display: flex;
+        gap: 0.25rem;
+        font-weight: 300;
+      }
+      &__trashIcon{
+        display: flex;
+        justify-content: end;
+        flex: 1;
+        &__icon{
+          cursor: pointer;
+          &:hover{
+              color: u.$error-red;
+          }
+        }
+      }
+    }
+    &__postImage{
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      overflow: hidden;
+
+      & img{
+        height: 20rem;
+        object-fit: contain;
+        border: 1px solid gray;
+        border-radius:20px ;
+      }
+    }
+    &__postInfo{
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      overflow: hidden;
+      margin-top: 1rem;
+      &__firstPart{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        width: 66.666667%;
+        
+        &__comments{
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+          cursor: pointer;
+          &:hover{
+            .post__content__postInfo__firstPart__comments__icon{
+              color: u.$sky;
+            }
+            & span{
+              color: u.$sky;
+            }
+          }
+          &__icon{
+            width: 1rem;
+            height: 1rem;
+            color: u.$slate; 
+          }
+          & span{
+            font-weight: 300;
+            color: u.$slate;
+          }
+        }
+        &__showComments{
+          border: none;
+          outline: none;
+          width: 25%;
+          height: fit-content;
+          background-color: black;
+          border-radius: 5%;
+          &__section{
+            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            &__header{
+              font-weight: bold;
+              margin-bottom: 1rem;
+            }
+            &__allComments{
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+              max-height: 15rem;
+              overflow-y: scroll;
+              &__noComments{
+                font-weight: 300;
+                color: u.$slate;
+              }
+              &__comment{
+                display: flex;
+                gap: 0.5rem;
+                align-items: start;
+                &__avatar{
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                }
+                &__userInfo{
+                  display: flex;
+                  flex-direction: column;
+                  &__first{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                    & span{
+                      &:first-child{
+                        font-weight: bold;
+                        color: white;
+                      }
+                      color: u.$slate;
+                      font-weight: 300;
+                    }
+                  }
+                  &__seconed{
+                    font-weight: 300;
+                    color: white;
+                    margin-top: 0.5rem;
+                  }
+                }
+              }
+            }
+            &__addComment{
+              display: flex;
+              gap: 0.5rem;
+              align-items: center;
+              margin-top: 1rem;
+              border-top: 1px solid u.$gray;
+              padding-top: 0.5rem;
+              & textarea{
+                width: 100%;
+                padding: 1rem;
+                font-size: 500;
+                resize: none;
+                background-color: transparent;
+                border: none;
+                color: white;
+                &:focus{
+                  outline: none;
+                  border: 1px solid u.$gray;
+                }
+              }
+              &__btn{
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                border-radius: 50px;
+                height: 40px;
+                padding: 0 1rem;
+                color: white;
+                background-color: u.$primary;
+              }
+            }
+          }
+          &__btn{
+            & button{
+              cursor: pointer;
+              background-color: transparent;
+              color: white;
+              border: 1px solid u.$gray;
+              padding: 0.5rem 1rem;
+              border-radius: 50px;
+              font-weight: bold;
+            }
+          }
+        }
+        &__replys{
+          display: flex;
+          gap: 0.25rem;
+          align-items: center;
+          cursor: pointer;
+          &:hover{
+            .post__content__postInfo__firstPart__replys__icon{
+              color: u.$green;
+            }
+            & span{
+              color: u.$green;
+            }
+          }
+          &__icon{
+            color: u.$slate;
+            width: 20px;
+            height: 20px;
+          }
+          & span{
+            font-size: 300;
+            color: u.$slate;
+          }
+        }
+        &__likes{
+          display: flex;
+          gap: 0.25rem;
+          cursor: pointer;
+          &:hover{
+            .post__content__postInfo__firstPart__likes__icon{
+              color: u.$pink;
+            }
+            & span{
+              color: u.$pink;
+            }
+          }
+
+          &__icon{
+            cursor: pointer;
+            color: u.$slate;
+            &.active{
+              color: u.$pink;
+            }
+
+          }
+          & span{
+            font-weight: 300;
+            color: u.$slate;
+        
+            &.isLiked{
+              color: u.$pink;
+            }
+          }
+        }
+
+      }
+      &__seconedPart{
+        display: flex;
+        &__icon{
+          color: u.$slate;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

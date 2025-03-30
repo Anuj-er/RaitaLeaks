@@ -1,0 +1,84 @@
+@use "../utils" as u;
+
+.editButton{
+  height: 40px;
+  padding: 0 1rem;
+  background-color: transparent;
+  border: 1px solid u.$gray-light;
+  border-radius: 40px;
+  cursor: pointer;
+  color: u.$gray-light;
+  transition: all 0.3s ease-in;
+  font-weight: bold;
+  &:hover{
+    background-color: u.$gray-light;
+    color: black;
+  }
+}
+
+.editContainer{
+  background-color: black;
+  border: 1px solid u.$gray-light;
+  border-radius: 10px;
+  &__updateData{
+    &__header{
+      font-weight: bold;
+      font-size: 1.125rem;
+      margin: 0.75rem 0;
+
+    }
+    &__form{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      & input,textarea{
+        flex: 1;
+        border: 1px solid u.$gray-light;
+        border-radius: 5px;
+        padding: 0.5rem;
+        height: 40px;
+        color: white;
+        background-color: transparent;
+      }
+      &__inputContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      &__btn{
+        padding: 0.75rem 0;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+        border: none;
+        cursor: pointer;
+        background-color: u.$primary;
+        transition: all 0.3s ease-in;
+        &:hover{
+          background-color: rgba(29, 155, 240,0.8);
+        }
+      }
+    }
+  }
+  &__closeBtn{
+    & button{
+      width: 100%;
+      padding: 0.75rem 0;
+      margin-top: 0.5rem;
+      border-radius: 100px;
+      border: 1px solid u.$gray-light;
+      background-color: transparent;
+      color: u.$gray-light;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+      &:hover{
+        background-color: u.$gray-light;
+        color: black;
+      }
+    }
+  }
+}

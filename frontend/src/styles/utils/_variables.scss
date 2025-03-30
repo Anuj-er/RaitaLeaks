@@ -1,0 +1,26 @@
+$primary: #D4AF37;       
+$secondary: rgb(24, 24, 24);  
+$gray: #16181C;  
+$gray-light: gray;  
+$error-red: #ef4444;  
+$sky: #E1AD01;         
+$blue: #B8860B;             
+$green: #22c55e;  
+$pink: #ec4899;  
+$slate: #9C8A4D;         
+
+
+$base-color: #ddd;
+$shine-color: #e8e8e8;
+$animation-duration: 1.6s;
+$avatar-offset: 52 + 16;
+
+@mixin background-gradient{
+  background-size: 600px;
+  background-image: linear-gradient(90deg, $gray-light 0px, $shine-color 40px, $base-color 80px);
+}
+@mixin background-gradient2{
+  background-size: 600px;
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $gray-light 80px);
+}
+  

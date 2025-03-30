@@ -1,0 +1,47 @@
+@use "../utils" as u;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before,*::after{
+  box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: "Mada", sans-serif;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 76rem; 
+  margin-left: auto;    
+  margin-right: auto; 
+  background-color: #000000;
+}
+
+.app{
+  display: flex;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0;            
+  margin: 0;            
+}
+
+.link{
+  text-decoration: none;
+  color: inherit; 
+  outline: none;
+}
+
+.error{
+  color: u.$error-red;
+}

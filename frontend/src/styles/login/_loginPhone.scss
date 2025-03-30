@@ -1,0 +1,7 @@
+@use "../utils" as u;
+
+@include u.breackPoint(md){
+  .container{
+    background-color: aqua;
+  }
+}

@@ -1,0 +1,101 @@
+@use "../utils" as u;
+
+.loginContainer {
+  display: flex; 
+  height: 100vh; 
+  // padding: 0 5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  & button{
+    width: 100%;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &__illustration{
+    flex: 1;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg{
+      width: 100%;
+    }
+  }
+  &__form-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    &__form{
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+
+      &__header{
+        margin-bottom: 10px;
+      }
+      &__inputs{
+        display:flex;
+        flex-direction: column;
+        gap: 20px;
+        & label{
+          width: 100%;
+          display:flex;
+          align-items: center;
+          & .icon{
+            fill: white;
+            position: absolute;
+            margin-left: 10px;
+          }
+          position: relative;
+          & input{
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid u.$secondary;
+            text-indent: 30px;
+            color: white;
+            &::placeholder{
+              color: white;
+            }
+            &:focus{
+              background-color: transparent;
+            }
+            &:data{
+              background-color: transparent;
+            }
+            
+          }
+        }
+        & button{
+          background-color:u.$primary;
+          border: none;
+          color: white;
+        }
+      }
+
+    }
+    &__login{
+      margin-top: 20px;
+      width: 60%;
+
+      &__login-text{
+        text-align: start;
+        margin-bottom: 10px;
+      }
+      & button{
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid u.$secondary;
+        color:u.$primary;
+      }
+    }
+  }
+}
