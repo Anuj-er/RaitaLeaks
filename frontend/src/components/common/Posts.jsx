@@ -9,15 +9,15 @@ function Posts({feedType,username,userId}) {
   const getEndPoint = ()=>{
     switch (feedType){
       case "forYou":
-        return "/api/posts/all";
+        return "/posts/all";
       case "following":
-        return "/api/posts/following";
+        return "/posts/following";
       case "posts":
-        return `/api/posts/user/${username}`;
+        return `/posts/user/${username}`;
       case "likes":
-        return `/api/posts/likes/${userId}`;
+        return `/posts/likes/${userId}`;
       default:
-        return "/api/posts/all";
+        return "/posts/all";
     }
   }
 

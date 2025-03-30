@@ -18,7 +18,7 @@ function LoginPage() {
   const { mutate: loginMutation, isError, isPending, error } = useMutation({
     mutationFn: async ({ username, password }) => {
       try {
-        const res = await fetchApi("/api/auth/login", {
+        const res = await fetchApi("/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

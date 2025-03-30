@@ -19,7 +19,7 @@ function CreatePost() {
   const {mutate:createPost,isPending,isError,error} = useMutation({
     mutationFn: async({text,img})=>{
       try {
-        const res = await fetchApi("/api/posts/create",{
+        const res = await fetchApi("/posts/create",{
           method: "POST",
           headers:{
             "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const useFollow = ()=>{
   const {mutate:followUnfollow,isPending} = useMutation({
     mutationFn: async(userId)=>{
       try {
-        const res = await fetchApi(`/api/users/follow/${userId}`,{
+        const res = await fetchApi(`/users/follow/${userId}`,{
           method: "POST"
         })
         const data = await res.json()

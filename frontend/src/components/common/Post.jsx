@@ -41,7 +41,7 @@ const Post = ({ post }) => {
 	const {mutate:likeUnlikePost,isPending:likeUnlikePending} = useMutation({
 		mutationFn: async()=>{
 				try {
-					const res = await fetchApi(`/api/posts/like/${post._id}`,{
+					const res = await fetchApi(`/posts/like/${post._id}`,{
 						method: "POST",
 					})
 					const data = await res.json()
@@ -72,7 +72,7 @@ const Post = ({ post }) => {
 	const {mutate:commentPost,isPending:commentPending,error} = useMutation({
 		mutationFn: async()=>{
 			try {
-				const res = await  fetchApi(`/api/posts/comment/${post._id}`,{
+				const res = await  fetchApi(`/posts/comment/${post._id}`,{
 					method: "POST",
 					headers:{
             "Content-Type": "application/json",

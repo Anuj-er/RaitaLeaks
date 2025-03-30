@@ -38,7 +38,7 @@ const ProfilePage = () => {
 		queryKey: ["userProfile"],
 		queryFn: async()=>{
 			try {
-				const res = await fetchApi(`/api/users/profie/${username}`)
+				const res = await fetchApi(`/users/profie/${username}`)
 
 				const data = await res.json()
 
