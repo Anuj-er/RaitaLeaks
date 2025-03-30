@@ -27,8 +27,14 @@ const __dirname = path.dirname(__filename);
 
 // Add CORS to allow requests from your Vercel frontend
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://your-vercel-frontend-url.vercel.app'],
-  credentials: true
+  origin: [
+    'http://localhost:5173',  // Local development frontend
+    'https://raita-leaksmain.vercel.app', // Your Vercel domain - replace with actual domain
+    /\.vercel\.app$/  // All Vercel preview domains
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use((req, res, next) => {

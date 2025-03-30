@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { MdPassword } from "react-icons/md";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import {Link} from "react-router-dom"
+import { fetchApi } from '../../../utils/apiConfig';
 
 import {useMutation} from "@tanstack/react-query"
 
@@ -21,7 +22,7 @@ function SignUpPage() {
   const {mutate, isError, isPending, error} = useMutation({
     mutationFn: async({username, fullname, password, email}) => {
       try {
-        const res = await fetch("/api/auth/signup", {
+        const res = await fetchApi("/api/auth/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

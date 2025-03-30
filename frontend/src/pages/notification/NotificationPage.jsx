@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import { useMutation, useQueryClient,useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { fetchApi } from '../../utils/apiConfig';
 
 
 import { IoSettingsOutline } from "react-icons/io5";
@@ -19,7 +20,7 @@ function NotificationPage() {
     queryKey: ["notifications"],
     queryFn: async()=>{
       try {
-        const res = await fetch("/api/notifications/")
+        const res = await fetchApi("/api/notifications/")
         const data = await res.json()
 
         if(!res.ok) throw new Error(data.error || "Something went wrong!")
@@ -35,7 +36,7 @@ function NotificationPage() {
   const {mutate:deleteAllNotifications,isPending} = useMutation({
     mutationFn: async()=>{
       try {
-        const res = await fetch("/api/notifications/",{
+        const res = await fetchApi("/api/notifications/",{
           method: "DELETE",
         })
         const data = await res.json()

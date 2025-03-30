@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import useFollow from '../../hooks/useFollow';
 import LoadingSpinner from './LoadingSpinner';
+import { fetchApi } from '../../utils/apiConfig';
 
 function RightPanel() {
   const {data:suggestedUsers,isLoading}= useQuery({
     queryKey:["suggestedUsers"],
     queryFn: async()=>{
       try {
-        const res = await fetch("/api/users/suggests")
+        const res = await fetchApi("/api/users/suggests")
 
         const data = await res.json()
 

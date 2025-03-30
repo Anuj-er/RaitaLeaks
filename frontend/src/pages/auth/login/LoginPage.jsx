@@ -5,6 +5,7 @@ import Xsvg from '../../../components/svgs/X';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
+import { fetchApi } from '../../../utils/apiConfig';
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ function LoginPage() {
   const { mutate: loginMutation, isError, isPending, error } = useMutation({
     mutationFn: async ({ username, password }) => {
       try {
-        const res = await fetch("/api/auth/login", {
+        const res = await fetchApi("/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

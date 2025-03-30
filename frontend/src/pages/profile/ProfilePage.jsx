@@ -16,6 +16,7 @@ import { formatMemberSinceDate } from "../../utils/date";
 import useFollow from "../../hooks/useFollow"
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import useUpdate from "../../hooks/useUpdate";
+import { fetchApi } from "../../utils/apiConfig";
 
 
 const ProfilePage = () => {
@@ -37,7 +38,7 @@ const ProfilePage = () => {
 		queryKey: ["userProfile"],
 		queryFn: async()=>{
 			try {
-				const res = await fetch(`/api/users/profie/${username}`)
+				const res = await fetchApi(`/api/users/profie/${username}`)
 
 				const data = await res.json()
 
