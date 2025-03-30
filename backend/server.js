@@ -64,10 +64,10 @@ app.use(express.json({limit:"5mb"}))
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 
-app.use("/api/auth", authRoutes)
-app.use("/api/users", usersRoutes)
-app.use("/api/posts", postsRoutes)
-app.use("/api/notifications", notificationsRoutes)
+app.use("/auth", authRoutes)
+app.use("/users", usersRoutes)
+app.use("/posts", postsRoutes)
+app.use("/notifications", notificationsRoutes)
 
 // Replace the production block with this
 app.get("/", (req, res) => {
