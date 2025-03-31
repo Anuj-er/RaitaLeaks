@@ -21,6 +21,21 @@ RaitaLeaks is a modern social media platform built on the powerful MERN stack. I
 Users can register, personalize their digital presence, share content, connect with like-minded individuals, and engage with a community that values authentic expression.
 
 ---
+## 📸 Snippets of our work 
+
+### Homepage
+<img src="https://raw.githubusercontent.com/anushi13prsnl/RaitaLeaks/refs/heads/main/screenshots/homepage.png" alt="Homepage" width="600"/>
+
+### Profile Page
+<img src="https://raw.githubusercontent.com/anushi13prsnl/RaitaLeaks/refs/heads/main/screenshots/profile.png" alt="Profile Page" width="600"/>
+
+### Notifications
+<img src="https://raw.githubusercontent.com/anushi13prsnl/RaitaLeaks/refs/heads/main/screenshots/notifications.png" alt="Notifications" width="600"/>
+
+### Login Page
+<img src="https://raw.githubusercontent.com/anushi13prsnl/RaitaLeaks/refs/heads/main/screenshots/loginPage.png" alt="Login Page" width="600"/>
+
+---
 
 ## ✨ Feature Highlights
 
