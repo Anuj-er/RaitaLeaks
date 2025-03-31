@@ -1,8 +1,6 @@
 <div align="center">
   
-# 🚀 RaitaLeaks
-
-<img src="https://github.com/Anuj-er/RaitaLeaks/frontend/public/RaitaLeaksLogo.png" alt="RaitaLeaks Logo" width="150"/>
+<img src="https://raita-leaks.vercel.app/assets/RaitaLeaksLogo-DRknF0qG.png" alt="RaitaLeaks Logo" width="300"/>
 
 ### *Because sometimes, spilling the tea isn't enough - Let's leak the Raita!*
   
