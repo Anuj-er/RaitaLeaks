@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 app.use(cors({
   origin: [
     'http://localhost:5173',  // Local development frontend
-    'https://raita-leaksmain.vercel.app', // Your Vercel domain - replace with actual domain
+    'https://raita-leaks.vercel.app', // Your Vercel domain - replace with actual domain
     /\.vercel\.app$/  // All Vercel preview domains
   ],
   credentials: true,
